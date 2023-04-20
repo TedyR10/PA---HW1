@@ -1,0 +1,55 @@
+**Name: Theodor-Ioan Rolea**
+
+**Group: 323CA**
+
+# HW1 PA
+
+### Feribot
+* This problem is solved using a binary search and a simple iteration inside.
+The left side is the minimum weight of all the cars and the right side is the
+sum of all the weights. We then start iterating through the available weights
+to find the lowest one using left and right defined previously.
+
+* Time complexity: O(nlogn)
+* Space complexity: O(n)
+
+***
+
+### Nostory
+* This problem is mainly solved by pairing a low number with a high number. For task1, I simply
+sorted both arrays & paired the numbers accordingly. For task2, I first swaped the numbers in
+place, making the a vector the "lower" overall number vector per position, then sorted and
+applied the same logic as in task1.
+
+* Time complexity: O(nlogn)
+* Space complexity: O(n)
+
+***
+
+### Sushi
+* This problem is basically the knapsack problem slightly changed. I've taken the code provided
+in the lab and changed it accordingly. The idea is that at every step we must retain the best
+solution using a prefix from the vector, but because we have a price constraint, the solution
+will be saved in an auxiliary array such as dp[i][cap] = max sum obtained from the first i
+sushi having a maximum price. The solution to the problem is found in dp[m][n * x], after
+iterating through all the available sushis.
+
+* Time complexity: O(n * m * x)
+* Space complexity: O(n * m * x)
+***
+
+### Semnale
+* This problem is solved using combinations. For task1, we can observe that given x and y, the
+result will be (x + 1)Cy. For task2, we can calculate that the result would be (x + 1)Ci * iC(y - i),
+i ranging from half of y to y. To calculate the combinations, we have to use a
+fast algorithm to precalculate all factorial up to max(x + 1, y). Thus, one solution is to
+make use of Fermat's Little Theorem. Then, to calculate n ^ (p - 2) we can use a fast power
+algorithm. The exponent can be broken down into a sum of 2 powers and the result in a product
+where we raise the original number to each power by squaring over and over.
+
+* Time complexity: O(max(x, y)) (task 1)
+                   O(max(x, y) + y) (task 2)
+
+* Space complexity: O(max(x, y)) (for both tasks)
+
+***
